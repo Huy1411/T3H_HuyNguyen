@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam </title>
+</head>
+<body>
+<input type=button name=welcome value="Welcome" onclick="alert('Welcome to JavaScript');"
+/>
+<br/>
+<script language="JavaScript">
+    //Ex 0
+    function isPrime(n) {
+        var flag = true;
+        if (n < 2) {
+            flag = false;
+        } else if (n == 2) {
+            flag = true;
+        } else if (n % 2 == 0) {
+            flag = false;
+        } else {
+            for (var i = 3; i <= Math.sqrt(n); i += 2) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+
+    var n = 9
+    var isPrimeNumber = isPrime(n)
+    if (isPrimeNumber) {
+        document.writeln("Ex 0: " + n + " is Prime number")
+    } else {
+        document.writeln("Ex 0: " + n + " is not Prime number")
+    }
+    document.write("<BR>");
+
+    // Ex 1
+    var n = 10
+    document.write("Ex 1: ")
+    for (var i = 1; i <= n; i++) {
+        document.write(i)
+    }
+    document.write("<BR>");
+
+    // Ex 2
+    var n = 10
+    document.write("Ex 2: ")
+    for (var i = 1; i <= n; i++) {
+        if (i % 2 != 0) {
+            document.write(i)
+        }
+    }
+    document.write("<BR>");
+    // Ex 3
+    var n = 10
+    document.write("Ex 3: ")
+    for (var i = 1; i <= n; i++) {
+        if (i % 2 == 0) {
+            document.write(i)
+        }
+    }
+    document.write("<BR>");
+
+    // Ex 4
+    var n = 10
+    document.write("Ex 4: ")
+    for (var i = 1; i <= n; i++) {
+        var isPrimeNumber = isPrime(i)
+        if (isPrimeNumber) {
+            document.write(i)
+        }
+    }
+    document.write("<BR>");
+
+    // Ex 5
+    var n = 10
+    document.write("Ex 5: ")
+    var x = 0
+    for (var i = 1; i <= n; i++) {
+        x += i
+    }
+    document.write(x)
+    document.write("<BR>");
+
+    // Ex 6
+    var n = 10
+    var sum = 0
+    document.write("Ex 6: ")
+    for (var i = 0; i <= n; i++) {
+        sum += i * i;
+    }
+    document.write(sum)
+    document.write("<BR>");
+
+    // Ex 7
+    var n = 10
+    var sum = 0
+    document.write("Ex 7: ")
+    for (var i = 0; i <= n; i++) {
+        if (i % 2 != 0) {
+            sum += i
+        }
+    }
+    document.write(sum)
+    document.write("<BR>");
+
+    // Ex 8
+    document.write("Ex 8: ")
+    var n = 78911;
+    var check = true;
+    while (n > 0) {
+        var remain = n % 10
+        if (remain % 2 == 0) {
+            check = false
+            break;
+        }
+        n = Math.floor(n / 10)
+    }
+    if (check) {
+        document.write(n + " là tập hợp các số lẻ ")
+    } else {
+        document.write(n + " không là tập hợp các số lẻ")
+    }
+    document.write("<BR>");
+
+    // Ex 9
+    document.write("Ex 9: ")
+    var n = 123454321
+    var x = 0
+    var a = n
+    for (var i = 0; i < n; i++) {
+        x = x * 10 + a % 10;
+    }
+    if (x = n) {
+        document.write(n + "là số đối xứng ")
+    } else {
+        document.write(n + "là số không đối xứng")
+    }
+    document.write("<BR>");
+
+    // Ex 10
+    document.write("Ex 10: ")
+    document.write("<BR>");
+
+    var n = 10;
+    for (var i = 1; i <= n; i++) {
+        for (var j = 1; j <= n; j++) {
+            document.write(i + " * " + j + " = " + (i * j))
+            document.write("<BR>");
+        }
+    }
+
+    // Ex 11
+    document.write("Ex 11: ")
+    var n = " Hello World "
+    var dem = 0;
+    for (var i = 0; i < n.length; i++) {
+        if (n[i] === " ") {
+            dem++
+        }
+    }
+    document.write(dem)
+    document.write("<BR>");
+
+    // Ex 12
+    document.write("Ex 12: ")
+    var n = "   Hello world   "
+    document.write(n.replace(/\s+/g, ''))
+    document.write("<BR>");
+
+    // Ex 13
+    document.write("Ex 13: ")
+    var n = "This is a beautiful day"
+
+    function reverseString(str) {
+        var n = str.split("").reverse().join("")
+        // split: chuyen 1 chuoi sang 1 mang // reverse: dao nguoc mang // join: gop cac phan tu cua mang thanh chuoi
+        return n
+    }
+
+    function reverseString2(str) {
+        var n = ""
+        for (var i = str.length - 1; i >= 0; i--) {
+            n += str[i];
+        }
+        return n
+    }
+
+    document.writeln("Cách 1:" + reverseString(n))
+    document.writeln("Cách 2:" + reverseString2(n))
+    document.write("<BR>");
+    // Ex 14
+    document.write("Ex 14: ")
+    var s1 = "This is a beautiful day", s2 = "is"
+    document.write(s1.indexOf(s2, 0))
+    document.write("<BR>");
+
+    // Ex 15
+    document.write("Ex 15: ")
+    var name = "NguyeN THI tho tHu hA"
+    var result = "";
+    for (var i = 0; i < name.length; i++) {
+        if (i == 0 || name[i - 1] === " ") {
+            result = name[i].toUpperCase()
+        } else {
+            result = name[i].toLowerCase()
+        }
+    }
+    document.write(result)
+    document.write("<BR>");
+
+    // Ex 16
+    document.write("Ex 16: ")
+    var n = "https://www.facebook.com/ngothucdat"
+    document.writeln(n.lastIndexOf("/"))
+    document.write("<BR>");
+
+    // Ex 17
+    document.write("Ex 17: ")
+    var n = [2, 4, 7, 10, 12]
+
+    function maxNumber(n) {
+        var max = n[0];
+        for (var i = 1; i < n.length; i++)
+            if (max < n[i])
+                max = n[i];
+        return max;
+    }
+
+    function minNumber(n) {
+        var min = n[0];
+        for (var i = 1; i < n.length; i++)
+            if (min > n[i])
+                min = n[i];
+        return min;
+    }
+
+    document.write("Min: " + minNumber(n) + " --- " + "Max : " + maxNumber(n))
+    document.write("<BR>");
+
+    // Ex 18
+    document.write("Ex 18: ")
+    var s1 = "This is a beautiful day, is it?", s2 = "is"
+    document.write(s1.lastIndexOf(s2, 6))
+    document.write("<BR>");
+
+    // Ex 19
+    document.write("Ex 19: ")
+    document.write("<BR>");
+    var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    var total = numbers.reduce((a, b) => {
+        return a + b
+    }, 0)
+    document.write("Total(" + numbers.length + "):" + total)
+    document.write("<BR>");
+
+    var sum = ([number, ...rest]) => {
+        if (rest.length === 0) {
+            return number;
+        }
+        return number + sum(rest);
+        document.write(sum(numbers))
+    };
+    document.write(("Total(" + numbers.length + "):" + sum(numbers)))
+    document.write("<BR>");
+
+    // Ex 20
+    document.write("Ex 20: ")
+    var n = `computer =            " ngan 98    " AND class = "  REACTJS2002 "`
+    document.write(n.replace(/\s+/g, ''))
+    document.write("<BR>");
+
+    //Ex 21
+    document.write("Ex 21: ")
+    var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+    var total = a.reduce((a, b) => {
+        return a + b
+    }, 0)
+    document.write(total)
+    document.write("<BR>");
+
+    //Ex 22
+    document.write("Ex 22: ")
+    var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 8, 9, 6, 5, 4, 3, 2, 1]
+    var max = Math.max.apply(Math, a);
+    var min = Math.min.apply(Math, a);
+    document.writeln("Max = " + max + " Min = " + min + " Average = " + ((max + min) / 2))
+    document.write("<BR>");
+
+
+    // Ex 23
+    document.write("Ex 23: ")
+    var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 8, 9, 6, 5, 4, 3, 2, 1]
+    var n = [];
+    for (var i = 0; i < a.length; i++) {
+        n[a[i]] = (n[a[i]] || 0) + 1;
+    }
+
+    for (var j = 1; j < n.length; j++) {
+        var max = n[a[0]]
+        if (max < n[a[j]]) {
+            max = n[a[j]]
+        }
+    }
+    document.write(max)
+    document.write("<BR>")
+
+    // Ex 24
+    document.write("Ex 24: ")
+    var a = [1, 2, 3, 2, 3, 4, 6, 7]
+    var filterAllPrimeNumber = (n) => {
+        var flag = true;
+        if (n < 2) {
+            flag = false;
+        } else if (n == 2) {
+            flag = true;
+        } else if (n % 2 == 0) {
+            flag = false;
+        } else {
+            for (var i = 3; i <= Math.sqrt(n); i += 2) {
+                if (n % i == 0) {
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        return flag;
+    }
+    var result = a.filter(filterAllPrimeNumber)
+    document.write(result)
+    document.write("<BR>");
+
+    // Ex 5
+    document.write("Ex 25: ")
+    var a = [1, 2, 3, 2, 3, 4, 6, 7]
+    var b = [];
+
+    for (var i = 0; i < a.length; i++) {
+        b.push(a[i] ** 2);
+    }
+    document.write(b)
+    document.write("<BR>");
+
+    // Ex 5
+    document.write("Ex 26: ")
+    var a = [1, 2, 3, 4, 6, 7], k = 1
+    var largeNumber = [];
+    var smallNumber = [];
+    var result = [];
+    for (var i = 0; i < a.length; i++) {
+        if (k > a[i]) {
+            smallNumber.push(a[i]);
+        } else if(k <= a[i]) {
+            largeNumber.push(a[i]);
+        }
+    }
+    if (smallNumber.length == 0) {
+        result.push(Math.min.apply(Math, largeNumber))
+    } else if (largeNumber.length == 0) {
+        result.push(Math.max.apply(Math, smallNumber))
+    } else {
+        result.push(Math.max.apply(Math, smallNumber), Math.min.apply(Math, largeNumber))
+    }
+    document.write(result)
+    document.write("<BR>");
+
+
+</script>
+</body>
+<script src="../js/Exam.js"></script>
+
+</html>
