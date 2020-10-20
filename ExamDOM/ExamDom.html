@@ -9,26 +9,41 @@
 <div id="ex6" style="width: 100%;height: 100px">
     <p>6.Change background color when user click button.</p>
     <button type="button" id="js-bgr-blue" style="color: blue" value="blue">Blue</button>
-    <button type="button" id="js-bgr-red" style="color: red" value="red">red</button>
+    <button type="button" id="js-bgr-red" style="color: red" value="red">Red</button>
 </div>
 <hr>
 <div id="ex10">
     <p>10.Create Show more and Show less when text is very long</p>
-    <div id="js-text-long" style="width: 50%;height: 50px;text-align: center">
-        <p>
-            Hiệp định trên được đặt tên theo chương trình Mặt Trăng Artemis của NASA, tìm cách cải tiến luật vũ trụ quốc tế hiện nay bằng cách thiết lập “những vùng an toàn” xung quanh các cơ sở trên Mặt Trăng nhằm ngăn chặn xung đột giữa các quốc gia đang hoạt động tại đó, và bằng cách cho phép các công ty tư nhân sở hữu những nguồn tài nguyên trên Mặt Trăng mà họ khai thác được. Mỹ, Australia, Canada, Nhật Bản, Luxembourg, Italy, Anh và Các Tiểu vương quốc Arab Thống nhất (UAE) đã ký kết các thỏa thuận song phương tại hội nghị vũ trụ hàng năm hôm 13/10 sau nhiều tháng đàm phán trong khuôn khổ nỗ lực từ phía Washington nhằm bồi dưỡng các đồng minh theo kế hoạch đưa các phi hành gia quay trở lại Mặt Trăng vào năm 2024.
-        </p>
-    </div>
-    <button type="button" id="js-button-show">Show</button>
-    <div id="result"></div>
+    <p class="text">
+        Hiệp định trên được đặt tên theo chương trình Mặt Trăng Artemis của NASA, tìm cách cải tiến luật vũ
+        trụ quốc tế hiện nay bằng cách thiết lập “những vùng an toàn” xung quanh các cơ sở trên Mặt Trăng nhằm ngăn chặn
+        xung đột giữa các quốc gia đang hoạt động tại đó, và bằng cách cho phép các công ty tư nhân sở hữu những nguồn
+        tài nguyên trên Mặt Trăng mà họ khai thác được. Mỹ, Australia, Canada, Nhật Bản, Luxembourg, Italy, Anh và Các
+        Tiểu vương quốc Arab Thống nhất (UAE) đã ký kết các thỏa thuận song phương tại hội nghị vũ trụ hàng năm hôm
+        13/10 sau nhiều tháng đàm phán trong khuôn khổ nỗ lực từ phía Washington nhằm bồi dưỡng các đồng minh theo kế
+        hoạch đưa các phi hành gia quay trở lại Mặt Trăng vào năm 2024.
+        <span class="dots">...</span><br/>
+        <span class="moreText">Hiệp định trên được đặt tên theo chương trình Mặt Trăng Artemis của NASA, tìm cách cải tiến luật vũ
+        trụ quốc tế hiện nay bằng cách thiết lập “những vùng an toàn” xung quanh các cơ sở trên Mặt Trăng nhằm ngăn chặn
+        xung đột giữa các quốc gia đang hoạt động tại đó, và bằng cách cho phép các công ty tư nhân sở hữu những nguồn
+        tài nguyên trên Mặt Trăng mà họ khai thác được. Mỹ, Australia, Canada, Nhật Bản, Luxembourg, Italy, Anh và Các
+        Tiểu vương quốc Arab Thống nhất (UAE) đã ký kết các thỏa thuận song phương tại hội nghị vũ trụ hàng năm hôm
+        13/10 sau nhiều tháng đàm phán trong khuôn khổ nỗ lực từ phía Washington nhằm bồi dưỡng các đồng minh theo kế
+        hoạch đưa các phi hành gia quay trở lại Mặt Trăng vào năm 2024</span>
+    </p>
+    <button class="btn btn-success js-btn-show">Read More</button>
 </div>
 <hr>
 <div id="ex13">
     <p>13.Create a Stopwatch</p>
-    <button type="button" id="js-button-start">Start</button>
-    <button type="button" id="js-button-stop">Stop</button>
-    <button type="button" id="js-button-reset">Reset</button>
-    <h3 id="display"><time>00:00:00:000</time></h3>
+    <div id="display">
+        00:00:00:00
+    </div>
+
+    <div>
+        <button id="startStop">Start</button>
+        <button id="reset">Reset</button>
+    </div>
 
 </div>
 <script rel="script" src="./js/index.js"></script>

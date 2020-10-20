@@ -9,61 +9,104 @@ brgRed.addEventListener("click", function () {
     div6.style.backgroundColor = "red";
 })
 
-//this is ex10
-var btnShow = document.querySelector("div#ex10 button#js-button-show")
-var divshow = document.querySelector("div#ex10 div#js-text-long")
-var clicks = 0;
-btnShow.addEventListener('click', function () {
-    clicks += 1;
-    if (clicks % 2 !== 0) {
-        divshow.style.height = "auto"
+
+// this is ex10
+var btnShow = document.querySelector(".js-btn-show");
+var text = document.querySelector(".text");
+btnShow.addEventListener("click", function () {
+    text.classList.toggle("showMore");
+    if (btnShow.innerText === "Read More") {
+        btnShow.innerText = "Read Less";
     } else {
-        divshow.style.height = "50px"
-        btnShow.value.innerText = "Show less"
+        btnShow.innerText = "Read More";
     }
 })
 
 // this is ex13
-var start = document.querySelector("div#ex13 button#js-button-start")
-var stop = document.querySelector("div#ex13 button#js-button-stop")
-var reset = document.getElementById("js-button-reset")
-var h3 = document.getElementById("display")
-var h = 0, m = 0, s = 0, ms = 0, t
 
-function add() {
+var display = document.getElementById("display");
+var start_stop = document.getElementById("startStop")
+var resetBtn = document.getElementById("reset")
+
+let ms = 0
+let sec = 0;
+let min = 0;
+let hours = 0;
+
+let displayMs = 0;
+let displaySec = 0;
+let displayMin = 0;
+let displayHours = 0;
+
+let interval = null;
+
+let status = "stopped";
+
+function stopWatch() {
     ms++;
-    if (ms >= 1000) {
-        ms = 0;
-        s++;
-        if (s >= 60) {
-            s = 0;
-            m++;
-            if (m >= 60) {
-                m = 0;
-                h++;
-                if (h >= 24) {
-                    h = 0
-                }
+    if (ms / 100 === 1) {
+        ms = 0
+        sec++;
+        if (sec / 60 === 1) {
+            sec = 0;
+            min++;
+            if (min / 60 === 1) {
+                min = 0;
+                hours++;
             }
         }
     }
-    h3.textContent = (h ? (h > 9 ? h : "0" + h) : "00") + ":" + (m ? (m > 9 ? m : "0" + m) : "00") + ":" + (s > 9 ? s : "0" + s) + ":" + (ms > 9 ? ms : "00" + ms || ms > 99 ? ms : "0");
+
+
+    if (ms < 10) {
+        displayMs = "0" + ms.toString();
+    } else {
+        displayMs = ms;
+    }
+    if (sec < 10) {
+        displaySec = "0" + sec.toString();
+    } else {
+        displaySec = sec;
+    }
+
+    if (min < 10) {
+        displayMin = "0" + min.toString();
+    } else {
+        displayMin = min;
+    }
+
+    if (hours < 10) {
+        displayHours = "0" + hours.toString();
+    } else {
+        displayHours = hours;
+    }
+
+    display.innerHTML = displayHours + ":" + displayMin + ":" + displaySec + ":" + displayMs;
 }
 
-function run() {
-    t = setInterval(add, 1)
-}
+start_stop.addEventListener("click", function () {
+    if (status === "stopped") {
 
-start.addEventListener('click', function () {
-    run();
+        interval = window.setInterval(stopWatch, 10);
+        start_stop.innerHTML = "Stop";
+        status = "started";
+
+    } else {
+
+        window.clearInterval(interval);
+        start_stop.innerHTML = "Start";
+        status = "stopped";
+
+    }
 })
-stop.addEventListener("click", function () {
-    clearInterval(t);
-})
-reset.onclick = function () {
-    h3.textContent = "00:00:000";
-    h = 0;
-    m = 0;
-    s = 0;
+resetBtn.addEventListener("click", function () {
+    window.clearInterval(interval);
     ms = 0;
-}
+    sec = 0;
+    min = 0;
+    hours = 0;
+    display.innerHTML = "00:00:00:00";
+    start_stop.innerHTML = "Start";
+})
+
+
